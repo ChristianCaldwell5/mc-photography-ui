@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+/dist/
+/tmp/
+/ng-build/
+/.ng/
+/angular.json
+/package-lock.json
+/tsconfig.json
+/tsconfig.app.json
+/tsconfig.spec.json
+/e2e/
+/src/test.ts
+/src/polyfills.ts
+/src/styles.css
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
+
+# IDEs and Editors
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
