@@ -1,0 +1,29 @@
+<section id="hero">
+    <img class="gallery-hero" src="assets/images/hangin.png">
+    <h1>MC Gallery</h1>
+    <p>Welcome to my portfolio! You can select a filter below to view a specific service.</p>
+    <div class="filter-container">
+        <button class="selected" mat-stroked-button color="accent">All</button>
+        <button mat-stroked-button color="accent">Grads</button>
+        <button mat-stroked-button color="accent">Families</button>
+        <button mat-stroked-button color="accent">Couples</button>
+    </div>
+</section>
+<section id="gallery">
+    <img src="assets/gallery/gallery1.jpeg" alt="" (click)="openPreview('assets/gallery/gallery1.jpeg')">
+    <img src="assets/gallery/gallery2.jpeg" alt="" (click)="openPreview('assets/gallery/gallery2.jpeg')">
+    <img src="assets/gallery/gallery3.jpeg" alt="" (click)="openPreview('assets/gallery/gallery3.jpeg')">
+    <img src="assets/gallery/gallery4.jpeg" alt="" (click)="openPreview('assets/gallery/gallery4.jpeg')">
+    <img src="assets/gallery/gallery5.jpeg" alt="" (click)="openPreview('assets/gallery/gallery5.jpeg')">
+    <img src="assets/gallery/gallery9.jpeg" alt="" (click)="openPreview('assets/gallery/gallery6.jpeg')">
+    <img src="assets/gallery/gallery7.jpeg" alt="" (click)="openPreview('assets/gallery/gallery7.jpeg')">
+    <img src="assets/gallery/gallery8.jpeg" alt="" (click)="openPreview('assets/gallery/gallery8.jpeg')">
+    <img src="assets/gallery/gallery9.jpeg" alt="" (click)="openPreview('assets/gallery/gallery9.jpeg')">
+    <img src="assets/gallery/gallery10.jpeg" alt="" (click)="openPreview('assets/gallery/gallery10.jpeg')">
+    <img src="assets/gallery/gallery11.jpeg" alt="" (click)="openPreview('assets/gallery/gallery11.jpeg')">
+</section>
+<section id="navigate" *ngIf="(belowThresh$ | async)">
+    <button mat-fab aria-label="Scroll to top of page" (click)="scrollToTop()">
+        <mat-icon>arrow_upward</mat-icon>
+    </button>
+</section>

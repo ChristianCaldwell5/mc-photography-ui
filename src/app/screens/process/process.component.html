@@ -1,0 +1,151 @@
+<section id="hero">
+    <img src="assets/images/process_leaves.png" alt="">
+    <h1>MC Services</h1>
+    <p class="process">Learn about the process and the various services I offer below!</p>
+    <mat-divider></mat-divider>
+    <img src="assets/images/process_leaves.png" alt="">
+    <h2>The Process</h2>
+    <div class="steps">
+        <div class="step">
+            <p class="num">1.</p>
+            <p class="desc">Select a service you would like and fill out the form below with details such as preferred dates, venues, and anything else you would like me to know</p>
+        </div>
+        <div class="step">
+            <p class="num">2.</p>
+            <p class="desc">Keep an eye out for emails back to confirm availability and other details for the day!</p>
+        </div>
+        <div class="step">
+            <p class="num">3.</p>
+            <p class="desc">Meet at the confirmed time and venue, I will have the rest taken care of!</p>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <h1>Service Options</h1>
+    <p>MC Photography STL® offers packages for Senior Graduations, couples, singles, and families!</p>
+    <div class="options">
+        <div class="option">
+            <div class="top">
+                <img src="assets/images/services/one.jpeg" alt="">
+                <p>STANDARD</p>
+            </div>
+            <div class="info">
+                <mat-icon>image_outline</mat-icon>
+                <span>10 edited photos</span>
+            </div>
+            <div class="info">
+                <mat-icon>schedule</mat-icon>
+                <span>up to 30 minutes</span>
+            </div>
+            <div class="info">
+                <mat-icon>pin_drop</mat-icon>
+                <span>1 location</span>
+            </div>
+            <div class="info">
+                <span class="cost">Price:</span>
+                <span>$100</span>
+                <span class="deposit">Deposit:</span>
+                <span>$50</span>
+            </div>
+        </div>
+        <div class="option">
+            <div class="top">
+                <img src="assets/images/services/two.jpeg" alt="">
+                <p>PRO</p>
+            </div>
+            <div class="info">
+                <mat-icon>image_outline</mat-icon>
+                <span>30 edited photos</span>
+            </div>
+            <div class="info">
+                <mat-icon>schedule</mat-icon>
+                <span>up to 90 minutes</span>
+            </div>
+            <div class="info">
+                <mat-icon>pin_drop</mat-icon>
+                <span>1-2 location(s)</span>
+            </div>
+            <div class="info">
+                <span class="cost">Price:</span>
+                <span>$200</span>
+                <span class="deposit">Deposit:</span>
+                <span>$100</span>
+            </div>
+        </div>
+        <div class="option">
+            <div class="top">
+                <img src="assets/images/services/three.jpeg" alt="">
+                <p>VIP/Event</p>
+            </div>
+            <div class="info">
+                <mat-icon>image_outline</mat-icon>
+                <span>60-80 edited photos</span>
+            </div>
+            <div class="info">
+                <mat-icon>schedule</mat-icon>
+                <span>up to 6 hours</span>
+            </div>
+            <div class="info">
+                <mat-icon>pin_drop</mat-icon>
+                <span>1+ location(s)</span>
+            </div>
+            <div class="info">
+                <span class="cost">Price:</span>
+                <span>contact</span>
+            </div>
+        </div>
+    </div>
+    <p><span>Bonus:</span> First time customers get 10% off!</p>
+</section>
+<section id="book" class="ab-responsive-flex">
+    <div class="flex-1">
+        <h2>Book a Session</h2>
+        <p>Submit a session request below!</p>
+        <form>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <mat-label>Service Type</mat-label>
+                    <mat-select [(ngModel)]="selectedService" name="service">
+                      @for (service of services; track service) {
+                        <mat-option [value]="service.value">{{service.viewValue}}</mat-option>
+                      }
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field color="accent">
+                    <mat-label>Service Package</mat-label>
+                    <mat-select [(ngModel)]="selectedPackage" name="package">
+                      @for (package of packages; track package) {
+                        <mat-option [value]="package.value">{{package.viewValue}}</mat-option>
+                      }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <input matInput placeholder="First name">
+                </mat-form-field>
+                <mat-form-field color="accent">
+                    <input matInput placeholder="Last name">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <input matInput placeholder="Email">
+                </mat-form-field>
+                <mat-form-field color="accent">
+                    <input matInput placeholder="Phone number">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <textarea matInput placeholder="Additional details"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+        <button mat-flat-button color="primary">Send Request</button>
+    </div>
+    <div class="flex-2">
+        <img src="assets/images/bpone.jpg" alt="">
+    </div>
+</section>
+

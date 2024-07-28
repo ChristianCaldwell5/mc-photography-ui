@@ -1,0 +1,92 @@
+<!-- Hero Section -->
+<section id="hero" class="responsive-flex flex-1-3-container">
+    <div class="hero-logo flex-1 column-flex">
+        <img src="assets/images/main_logo.png" alt="">
+        <button mat-flat-button color="primary" class="hero-btn">About Me</button>
+        <button mat-flat-button color="accent" class="hero-btn">Gallery</button>
+    </div>
+    <div class="carousel-container flex-2 column-flex">
+        <img class="carousel" src="{{heroImages[carouselIndex]}}" alt="">
+        <mat-progress-bar mode="determinate" color="accent" value="{{carouselProgress}}"></mat-progress-bar>
+    </div>
+</section>
+<!-- About Section -->
+<section id="about" class="responsive-flex flex-1-3-container">
+    <div class="about-img-container flex-1 column-flex">
+        <img src="assets/images/about_main.jpeg" alt="">
+    </div>
+    <div class="flex-2 column-flex">
+        <h2>Hi, nice to meet you!</h2>
+        <p>My name is Makenna, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</section>
+<!-- Service Section -->
+<section id="services">
+    <h2>Services</h2>
+    <div class="description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation n culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="button-container">
+            <button class="service" mat-flat-button color="accent">couples</button>
+            <button class="service" mat-flat-button color="accent">families</button>
+            <button class="service" mat-flat-button color="accent">graduates</button>
+        </div>
+        <a href="/process">View Process & Packages</a>
+    </div>
+</section>
+<!-- Rotating Gallery -->
+<section id="gallery">
+    <ng-container *ngIf="(isMobile$ | async); else desktop">
+        <div class="revolving-container">
+            <div class="revolving-item">
+                <img src="{{heroImages[0]}}" alt="">
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #desktop>
+        <div class="revolving-container">
+            <div class="revolving-item">
+                <img src="{{heroImages[0]}}" alt="">
+            </div>
+            <div class="revolving-item">
+                <img src="{{heroImages[1]}}" alt="">
+            </div>
+            <div class="revolving-item">
+                <img src="{{heroImages[2]}}" alt="">
+            </div>
+        </div>
+    </ng-template>
+    <a href="/gallery">View all Photos</a>
+</section>
+<section id="contact" class="ab-responsive-flex">
+    <div class="flex-1">
+        <img src="assets/images/purp-monst.png" alt="">
+    </div>
+    <div class="flex-2">
+        <h2>Let's Chat!</h2>
+        <p>Have questions or want to know more? Please send a message and I will get back to you as soon as possible!</p>
+        <form>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <input matInput placeholder="First name">
+                </mat-form-field>
+                <mat-form-field color="accent">
+                    <input matInput placeholder="Last name">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <input matInput placeholder="Email">
+                </mat-form-field>
+                <mat-form-field color="accent">
+                    <input matInput placeholder="Phone number">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field color="accent">
+                    <textarea matInput placeholder="Message"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+        <button mat-flat-button color="primary">Send</button>
+    </div>
+</section>

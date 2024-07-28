@@ -1,0 +1,67 @@
+#hero {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    p {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .gallery-hero {
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        width: 100%;
+        max-width: 250px;
+        rotate: 300deg;
+        z-index: -1;
+    }
+    .filter-container {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        flex-wrap: wrap;
+        button {
+            margin: 1rem 2rem 0 0;
+            border-color: black;
+            color: black;
+            &.selected {
+                background-color: #cce99a;
+                color: black;
+            }
+        }
+    }
+}
+
+#gallery {
+    // create a grid layout that us 3 rows above 900px and 2 rows below 900px and above 600px and one row below 600px
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    grid-gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+    justify-items: center;
+    @media (max-width: 900px) {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+        grid-template-rows: repeat(1, 1fr);
+    }
+    img {
+        width: 100%;
+        border-radius: 1.25rem;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.40);
+        cursor: pointer;
+        //max-width: 250px;
+    }
+}
+
+#navigate {
+    text-align: center;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+}

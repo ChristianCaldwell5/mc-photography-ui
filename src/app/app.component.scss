@@ -1,0 +1,42 @@
+$dark-text: #1E1A1F;
+
+// add dark purple border bottom to the material toolbar
+.mat-toolbar {
+  &.footer {
+    border-top: 5px solid #CA9CE1;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 0;
+    a {
+      font-size: 1rem;
+    }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      margin: 0 1rem;
+    }
+  }
+  &.header {
+    border-bottom: 5px solid #CA9CE1;
+    padding: 5px 0;
+  }
+  a {
+    color: $dark-text !important;
+    text-decoration: none;
+    margin: 0 1rem;
+  }
+  
+}
+
+mat-toolbar-row.mobile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+    max-width: 60px;
+    margin: 0 5px;
+}

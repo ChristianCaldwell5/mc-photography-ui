@@ -1,1 +1,169 @@
+// import Righteous text font from assests folder and create font family
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+@font-face {
+  font-family: 'Righteous';
+  src: url('./assets/fonts/Righteous-Regular.ttf') format('truetype');
+}
+
+// Define the mc-lavender-palette
+$mc-lavender-palette: (
+  50: lighten(#F0DCF4, 40%),
+  100: lighten(#F0DCF4, 30%),
+  200: lighten(#F0DCF4, 20%),
+  300: lighten(#F0DCF4, 10%),
+  400: lighten(#F0DCF4, 5%),
+  500: #F0DCF4,
+  600: darken(#F0DCF4, 5%),
+  700: darken(#F0DCF4, 10%),
+  800: darken(#F0DCF4, 20%),
+  900: darken(#F0DCF4, 30%),
+  A100: lighten(#F0DCF4, 50%),
+  A200: lighten(#F0DCF4, 60%),
+  A400: lighten(#F0DCF4, 70%),
+  A700: lighten(#F0DCF4, 80%),
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: rgba(0, 0, 0, 0.87),
+    400: rgba(0, 0, 0, 0.87),
+    500: rgba(0, 0, 0, 1),
+    600: rgba(225, 225, 225, 0.87),
+    700: rgba(225, 225, 225, 0.87),
+    800: rgba(225, 225, 225, 0.87),
+    900: rgba(225, 225, 225, 0.87),
+    A100: rgba(0, 0, 0, 0.87),
+    A200: rgba(0, 0, 0, 0.87),
+    A400: rgba(0, 0, 0, 0.87),
+    A700: rgba(0, 0, 0, 0.87),
+  )
+);
+
+// define mc-secondary-pallette for #d4f694
+$mat-secondary-green: (
+  50: #f3f9e5,
+  100: #e0f2c1,
+  200: #cce99a,
+  300: #b8e06f,
+  400: #a7d94d,
+  500: #96d02b,
+  600: #8ac825,
+  700: #7ac11c,
+  800: #6ab914,
+  900: #4eab06,
+  A100: #e0f2c1,
+  A200: #cce99a,
+  A400: #a7d94d,
+  A700: #7ac11c,
+  contrast: (
+    50: rgba(0, 0, 0, 0.87),
+    100: rgba(0, 0, 0, 0.87),
+    200: rgba(0, 0, 0, 0.87),
+    300: rgba(0, 0, 0, 0.87),
+    400: rgba(0, 0, 0, 0.87),
+    500: rgba(0, 0, 0, 0.87),
+    600: rgba(0, 0, 0, 0.87),
+    700: rgba(0, 0, 0, 0.87),
+    800: rgba(0, 0, 0, 0.87),
+    900: rgba(0, 0, 0, 0.87),
+    A100: rgba(0, 0, 0, 0.87),
+    A200: rgba(0, 0, 0, 0.87),
+    A400: rgba(0, 0, 0, 0.87),
+    A700: rgba(0, 0, 0, 0.87),
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mc-photography-ui-primary: mat.define-palette($mc-lavender-palette);
+$mc-photography-ui-accent: mat.define-palette($mat-secondary-green);
+
+// The warn palette is optional (defaults to red).
+$mc-photography-ui-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mc-photography-light-ui-theme: mat.define-light-theme((
+  color: (
+    primary: $mc-photography-ui-primary,
+    accent: $mc-photography-ui-accent,
+    warn: $mc-photography-ui-warn,
+  )
+));
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mc-photography-dark-ui-theme: mat.define-dark-theme((
+  color: (
+    primary: $mc-photography-ui-primary,
+    accent: $mc-photography-ui-accent,
+    warn: $mc-photography-ui-warn,
+  )
+));
+
+@include mat.all-component-typographies(
+  mat.define-typography-config(
+    $font-family: 'Righteous, Roboto, sans-serif',
+  ),
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+//@include mat.all-component-themes($mc-photography-light-ui-theme);
+.mc-light-theme {
+  min-height: 100vh;
+  @include mat.all-component-themes($mc-photography-light-ui-theme);
+}
+
+.mc-dark-theme {
+  min-height: 100vh;
+  background-color: #685F74;
+  @include mat.all-component-themes($mc-photography-dark-ui-theme);
+  h1, p, a {
+    color: white;
+  }
+}
+
+.responsive-flex {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+div.mat-mdc-select-panel {
+  background-color: rgba(253, 251, 255, 1) !important;
+}
+mat-option:hover {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden; }
+p, span { font-family: Roboto !important; }
